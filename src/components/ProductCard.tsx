@@ -5,7 +5,6 @@ import {
   CardMedia,
   Typography,
   Button,
-  Box,
   Skeleton,
   useTheme,
 } from '@mui/material'

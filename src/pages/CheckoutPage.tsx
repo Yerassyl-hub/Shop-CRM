@@ -23,7 +23,7 @@ export function CheckoutPage() {
   const [activeStep, setActiveStep] = useState(0)
   const [shipping, setShipping] = useState<ShippingDetails | null>(null)
   const [payment, setPayment] = useState<PaymentDetails | null>(null)
-  const { items, getTotalPrice, clearCart } = useCart()
+  const { items, getTotalPrice } = useCart()
 
   const subtotal = getTotalPrice()
   const tax = subtotal * 0.1
@@ -47,9 +47,6 @@ export function CheckoutPage() {
     handleNext()
   }, [handleNext])
 
-  const handleOrderSubmit = useCallback(async () => {
-    // This is handled in CheckoutStep4
-  }, [])
 
   const renderStepContent = () => {
     switch (activeStep) {
@@ -79,9 +76,6 @@ export function CheckoutPage() {
             subtotal={subtotal}
             tax={tax}
             total={total}
-            onSubmit={async () => {
-              // Handled internally in CheckoutStep4
-            }}
             onBack={handleBack}
           />
         )

@@ -22,7 +22,6 @@ interface CheckoutStep4Props {
   subtotal: number
   tax: number
   total: number
-  onSubmit: () => Promise<void>
   onBack: () => void
 }
 
@@ -32,7 +31,6 @@ export function CheckoutStep4({
   subtotal,
   tax,
   total,
-  onSubmit,
   onBack,
 }: CheckoutStep4Props) {
   const navigate = useNavigate()
